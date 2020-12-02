@@ -1,4 +1,4 @@
-package com.demo.thread.datastruct.linked;
+package com.demo.datastruct.linked;
 
 /**
  * @description: 带头单向链表
@@ -9,7 +9,7 @@ public class SinglyLinkedList implements IList {
 
 	public static void main(String[] args) {
 		// 创建链表
-		IList list = new HeaderSinglyLinkedList();
+		IList list = new SinglyLinkedList();
 		// 向链表添加10个值
 		for (int i = 0; i < 10; i++) {
 			list.add(new Node("" + i));
@@ -30,8 +30,6 @@ public class SinglyLinkedList implements IList {
 	 * 链表中的节点数量
 	 */
 	private int size;
-
-
 
 	/**
 	 * 第一个节点

@@ -1,4 +1,4 @@
-package com.demo.thread.datastruct.linked;
+package com.demo.datastruct.linked;
 
 /**
  * @description:
