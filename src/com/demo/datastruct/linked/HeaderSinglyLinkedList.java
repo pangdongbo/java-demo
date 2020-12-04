@@ -80,6 +80,11 @@ public class HeaderSinglyLinkedList implements IList {
 		return this.size;
 	}
 
+	@Override
+	public void reverse() {
+
+	}
+
 	/**
 	 * 检查游标位置是否大于等于0，如果小于0则抛出异常
 	 * @param i

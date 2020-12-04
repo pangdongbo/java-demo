@@ -47,5 +47,10 @@ public interface IList {
 	 */
 	int getSize();
 
+	/**
+	 * 链表反转
+	 */
+	void reverse();
+
 
 }

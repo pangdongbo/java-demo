@@ -17,12 +17,15 @@ public class SinglyLinkedList implements IList {
 		System.out.println(list.getSize());
 		list.forEach();
 		// 获取第10个节点的值
-		System.out.println(list.get(9).value);
-		list.add(9, new Node("(9)"));
+		System.out.println(list.get(list.getSize() - 1).value);
+		list.add(list.getSize(), new Node("("+ list.getSize() +")"));
 		list.forEach();
-		list.remove(9);
+		list.remove(list.getSize() - 1);
 		list.forEach();
-		list.add(9, new Node("(9)"));
+		list.add(list.getSize() - 1, new Node("(" + list.getSize() + ")"));
+		list.forEach();
+		System.out.println(list.get(list.getSize() - 1).value);
+		list.reverse();
 		list.forEach();
 	}
 
@@ -119,6 +122,27 @@ public class SinglyLinkedList implements IList {
 	@Override
 	public int getSize() {
 		return this.size;
+	}
+
+	@Override
+	public void reverse() {
+		if (0 != this.size) {
+			if (1 == this.size) {
+				System.out.print(this.first.value);
+			} else {
+				for (int i = this.size - 1; i > 1; i--) {
+					Node swapFirst = this.first; // 交换第一个节点
+					Node swapLast = this.get(i); // 交换前的最后一个节点
+					this.first = this.first.next; // 把第二个节点移动到第一个节点
+					if (i == this.size - 1) {
+						swapFirst.next = null; // 如果是第一个交换，则他是最后一个节点，所有该节点.next = null;
+					} else {
+						swapFirst.next = swapLast.next; // 交换过来后，next
+					}
+					swapLast.next = swapFirst;  // 把第一个节点移动到最后
+				}
+			}
+		}
 	}
 
 	/**
